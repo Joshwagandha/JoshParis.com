@@ -1,11 +1,88 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <main>
+    <div class="orb-wrapper" id="orb-wrapper">
+      <div class="ambient-orb"></div>
+    </div>
+    <div class="content">
+      <h1>Josh Paris</h1>
+      <p class="tagline">I turn complexity into systems that work.</p>
+    </div>
+  </main>
 </Layout>
+
+<script>
+  const wrapper = document.getElementById('orb-wrapper');
+  
+  let x = window.innerWidth / 2;
+  let y = window.innerHeight / 2;
+  let vx = 0.4;
+  let vy = 0.3;
+  const size = 800;
+
+  function animate() {
+    x += vx;
+    y += vy;
+
+    if (x <= 0 || x >= window.innerWidth - size) vx *= -1;
+    if (y <= 0 || y >= window.innerHeight - size) vy *= -1;
+
+    vx += (Math.random() - 0.5) * 0.03;
+    vy += (Math.random() - 0.5) * 0.03;
+
+    vx = Math.max(-0.8, Math.min(0.8, vx));
+    vy = Math.max(-0.8, Math.min(0.8, vy));
+
+    wrapper.style.transform = `translate(${x}px, ${y}px)`;
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+</script>
+
+<style>
+  main {
+    min-height: 100vh;
+    background-color: #0a0a0a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .orb-wrapper {
+    position: fixed;
+    top: -400px;
+    left: -400px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+
+  .tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+</style>
