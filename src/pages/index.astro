@@ -3,86 +3,547 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
+  <header class="site-header">
+    <span class="header-name">Josh Paris</span>
+    <nav class="header-nav">
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
   <main>
-    <div class="orb-wrapper" id="orb-wrapper">
-      <div class="ambient-orb"></div>
-    </div>
-    <div class="content">
-      <h1>Josh Paris</h1>
-      <p class="tagline">I turn complexity into systems that work.</p>
-    </div>
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Josh Paris</h1>
+        <p class="role">PM and Ops lead at early-stage startups.</p>
+        <p class="bio">I've spent the last five years inside the operations layer of fintech startups - owning internal tooling, customer support systems, and AI automation work at Lithic and HMBradley. I'm the person who inherits a broken process, figures out what's actually wrong, and builds something that holds.</p>
+        <a href="mailto:joshsparis@gmail.com" class="email-cta">joshsparis@gmail.com</a>
+      </div>
+    </section>
+
+    <section class="experience-strip">
+      <div class="strip-inner">
+        <div class="strip-entry">
+          <span class="strip-company">Lithic</span>
+          <span class="strip-sep">·</span>
+          <span class="strip-role">PM, Internal Tools</span>
+          <span class="strip-sep">·</span>
+          <span class="strip-dates">2024 - 2025</span>
+        </div>
+        <div class="strip-entry">
+          <span class="strip-company">HMBradley</span>
+          <span class="strip-sep">·</span>
+          <span class="strip-role">PM, Support & Ops</span>
+          <span class="strip-sep">·</span>
+          <span class="strip-dates">2021 - 2024</span>
+        </div>
+        <div class="strip-entry">
+          <span class="strip-company">Undertime</span>
+          <span class="strip-sep">·</span>
+          <span class="strip-role">AI Consultant</span>
+          <span class="strip-sep">·</span>
+          <span class="strip-dates">2025 - Present</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="work" id="work">
+      <div class="work-inner">
+        <p class="section-label">Selected Work</p>
+
+        <article class="work-card">
+          <div class="card-meta">
+            <span class="card-company">Undertime</span>
+            <span class="card-sep">·</span>
+            <span class="card-context">AI Consultant</span>
+            <span class="card-sep">·</span>
+            <span class="card-dates">2025 - Present</span>
+          </div>
+          <h2 class="card-title">AI Email Agent for Insurance Agencies</h2>
+
+          <div class="card-sections">
+            <div class="card-section">
+              <h3 class="section-header">The Problem</h3>
+              <p class="section-body">Insurance agencies were manually qualifying and following up with incoming leads - slow, inconsistent, and entirely dependent on staff availability. Response times varied. Leads fell through.</p>
+            </div>
+
+            <div class="card-section">
+              <h3 class="section-header">My Role</h3>
+              <p class="section-body">Owned PM and QA for a live AI email agent handling lead qualification and drip sequencing. Wrote the prompt instructions, persona definitions, and output formatting constraints that determine how the agent behaves. Designed a GitHub-integrated QA pipeline that automatically evaluates agent outputs and generates structured feedback reports - creating a repeatable improvement loop without manual review overhead.</p>
+            </div>
+
+            <div class="card-section">
+              <h3 class="section-header">How It Works</h3>
+              <p class="section-body">The agent receives incoming leads, qualifies them through a structured conversation sequence, and routes warm prospects to a human closer. The QA pipeline runs automatically against every batch of outputs, flags deviations, and produces a feedback summary. Engineering handles the infrastructure - my job is making sure the agent actually does what the client needs it to do.</p>
+            </div>
+          </div>
+
+          <div class="card-tags">
+            <span class="tag">AI Implementation</span>
+            <span class="tag">Ops Automation</span>
+            <span class="tag">QA Systems</span>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="card-meta">
+            <span class="card-company">Personal Project</span>
+            <span class="card-sep">·</span>
+            <span class="card-dates">2025 - Present</span>
+          </div>
+          <h2 class="card-title">Job Search Agent</h2>
+
+          <div class="card-sections">
+            <div class="card-section">
+              <h3 class="section-header">The Problem</h3>
+              <p class="section-body">Job openings land across dozens of boards. By the time most people see a posting it already has 100+ applications. Even when you're early, you still have to manually read through the description, map it to your experience, and decide if it's worth your time - before spending an hour on an application that gets auto-rejected in 20 minutes.</p>
+            </div>
+
+            <div class="card-section">
+              <h3 class="section-header">The System</h3>
+              <p class="section-body">A Python automation agent that runs every morning. It scrapes 14 job boards simultaneously, deduplicates the results, scores every posting against my background and interests using AI, and delivers a ranked digest by the time I sit down to work.</p>
+            </div>
+
+            <div class="card-section">
+              <h3 class="section-header">How It Works</h3>
+              <p class="section-body">Every 24 hours, the agent hits 14 sources - LinkedIn, Wellfound, Himalayas, Remote OK, and direct integrations with Greenhouse, Lever, and Ashby company pages - deduplicates across sources, scores each posting, sorts results into tiers, and pushes a notification with top matches. Directed and shipped with AI as the build layer. Runs autonomously on GitHub Actions.</p>
+            </div>
+          </div>
+
+          <div class="card-tags">
+            <span class="tag">Internal Tooling</span>
+            <span class="tag">Ops Automation</span>
+            <span class="tag">AI Implementation</span>
+          </div>
+
+          <div class="card-footer">
+            <a
+              href="https://github.com/Joshwagandha/Josh-os/tree/main/job-search-agent"
+              class="card-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >View on GitHub &rarr;</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-inner">
+        <h2 class="contact-heading">Get in touch</h2>
+        <p class="contact-body">Open to full-time and contract roles in PM, Ops, and implementation at early-stage startups. Remote only.</p>
+        <a href="mailto:joshsparis@gmail.com" class="contact-email">joshsparis@gmail.com</a>
+      </div>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <span>Josh Paris</span>
+    <a href="mailto:joshsparis@gmail.com">joshsparis@gmail.com</a>
+    <a href="https://linkedin.com/in/josh-paris" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </footer>
 </Layout>
 
-<script>
-  const wrapper = document.getElementById('orb-wrapper');
-  
-  let x = window.innerWidth / 2;
-  let y = window.innerHeight / 2;
-  let vx = 0.4;
-  let vy = 0.3;
-  const size = 800;
-
-  function animate() {
-    x += vx;
-    y += vy;
-
-    if (x <= 0 || x >= window.innerWidth - size) vx *= -1;
-    if (y <= 0 || y >= window.innerHeight - size) vy *= -1;
-
-    vx += (Math.random() - 0.5) * 0.03;
-    vy += (Math.random() - 0.5) * 0.03;
-
-    vx = Math.max(-0.8, Math.min(0.8, vx));
-    vy = Math.max(-0.8, Math.min(0.8, vy));
-
-    wrapper.style.transform = `translate(${x}px, ${y}px)`;
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-</script>
-
 <style>
-  main {
-    min-height: 100vh;
-    background-color: #0a0a0a;
+  /* ── Variables ── */
+  :root {
+    --bg: #F9F7F4;
+    --text-primary: #1A1A1A;
+    --text-secondary: #6B6B6B;
+    --border: #E5E1DB;
+    --accent: #2E5DE0;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  /* ── Global ── */
+  :global(body) {
+    background-color: var(--bg);
+    color: var(--text-primary);
+  }
+
+  /* ── Header ── */
+  .site-header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border);
+    max-width: 900px;
+    margin: 0 auto;
   }
 
-  .orb-wrapper {
-    position: fixed;
-    top: -400px;
-    left: -400px;
-    pointer-events: none;
-    z-index: 0;
+  .header-name {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
   }
 
-  .content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
+  .header-nav {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .header-nav a {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .header-nav a:hover {
+    color: var(--text-primary);
+  }
+
+  /* ── Hero ── */
+  .hero {
+    padding: 5rem 2rem 4rem;
+  }
+
+  .hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
   }
 
   h1 {
-    font-family: 'Inter', sans-serif;
-    font-size: 4rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin: 0;
+    font-family: var(--font-body);
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 0.75rem;
     letter-spacing: -0.02em;
+    line-height: 1.1;
   }
 
-  .tagline {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.5);
-    margin-top: 1rem;
-    font-weight: 300;
-    letter-spacing: 0.02em;
+  .role {
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin: 0 0 1.5rem;
+    line-height: 1.5;
+  }
+
+  .bio {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    margin: 0 0 2rem;
+    max-width: 620px;
+  }
+
+  .email-cta {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s;
+  }
+
+  .email-cta:hover {
+    border-bottom-color: var(--accent);
+  }
+
+  /* ── Experience strip ── */
+  .experience-strip {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 2rem;
+  }
+
+  .strip-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 3rem;
+  }
+
+  .strip-entry {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .strip-company {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  .strip-role {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+
+  .strip-dates {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+  }
+
+  .strip-sep {
+    font-size: 0.75rem;
+    color: var(--border);
+  }
+
+  /* ── Work section ── */
+  .work {
+    padding: 5rem 2rem 6rem;
+  }
+
+  .work-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin: 0 0 2.5rem;
+  }
+
+  /* ── Work card ── */
+  .work-card {
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 2.5rem;
+    border: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+  }
+
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  .card-company {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  .card-context,
+  .card-dates {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+  }
+
+  .card-sep {
+    font-size: 0.7rem;
+    color: var(--border);
+  }
+
+  h2.card-title {
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 2rem;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+
+  .card-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .section-header {
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin: 0 0 0.5rem;
+  }
+
+  .section-body {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--text-primary);
+    margin: 0;
+  }
+
+  /* ── Tags ── */
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+
+  .tag {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 0.25rem 0.65rem;
+    border-radius: 4px;
+  }
+
+  /* ── Card footer ── */
+  .card-footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .card-link {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s;
+  }
+
+  .card-link:hover {
+    border-bottom-color: var(--accent);
+  }
+
+  /* ── Contact section ── */
+  .contact {
+    background: #FFFFFF;
+    border-top: 1px solid var(--border);
+    padding: 5rem 2rem;
+  }
+
+  .contact-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  h2.contact-heading {
+    font-family: var(--font-body);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 0.75rem;
+    letter-spacing: -0.01em;
+  }
+
+  .contact-body {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: 0 0 1.5rem;
+    max-width: 520px;
+  }
+
+  .contact-email {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s;
+  }
+
+  .contact-email:hover {
+    border-bottom-color: var(--accent);
+  }
+
+  /* ── Footer ── */
+  .site-footer {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+    border-top: 1px solid var(--border);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .site-footer span {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .site-footer a {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .site-footer a:hover {
+    color: var(--accent);
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 768px) {
+    .site-header,
+    .hero-inner,
+    .strip-inner,
+    .work-inner,
+    .contact-inner,
+    .site-footer {
+      max-width: 100%;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+    }
+
+    .hero {
+      padding: 3rem 1.25rem 3rem;
+    }
+
+    .experience-strip {
+      padding: 1.25rem;
+    }
+
+    .strip-inner {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .work {
+      padding: 3.5rem 1.25rem 4rem;
+    }
+
+    .work-card {
+      padding: 1.75rem 1.25rem;
+    }
+
+    .contact {
+      padding: 3.5rem 1.25rem;
+    }
+
+    .site-footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1.5rem 1.25rem;
+    }
   }
 </style>
